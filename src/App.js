@@ -27,7 +27,9 @@ function App() {
 
   function addToWatchlist(movie) {
     setWatchlist((prevMovies) => {
-      return [...prevMovies, movie]
+      if (!prevMovies.includes(movie)) {
+        return [...prevMovies, movie]
+      }
     })
   }
 
